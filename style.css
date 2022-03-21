@@ -5,7 +5,8 @@
     --font-primary: 'Roboto', arial, sans-serif;
     --background-color-primary: #fff;
     --background-color-secondary:rgb(242, 242, 242) ;
-    --btn-color: #f8f9fa;
+    --btn-bg-color: #f8f9fa;
+    
     --border-color: #dfe1e5;
     --icon-color: invert(63%) sepia(2%) saturate(1341%) hue-rotate(169deg) brightness(103%) contrast(79%);;
 }
@@ -32,7 +33,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-inline: .9rem;
+    padding-inline: .85rem;
 }
 
 header ul {
@@ -57,10 +58,20 @@ header ul li a {
 header ul li a:hover {
     text-decoration: underline;
 }
+
+.menu {
+    border-radius: 50%;
+    padding: .2rem;
+}
+
+.menu:hover {
+    background-color: var(--border-color);
+}
+
 .profile {
     border-radius: 50%;
-    height: 30px;
-    width: 30px;
+    height: 25px;
+    width: 25px;
 }
 
 /*******MAIN CONTENT**********/
@@ -107,10 +118,11 @@ main input[type="search"] {
 
 button {
     margin-inline: .4rem;
-    padding: .5rem .8rem;
+    padding: .6rem .8rem;
     border: 1px solid var(--background-color-primary);
     border-radius: 5px;
-    background-color: var(--btn-color);
+    background-color: var(--btn-bg-color);
+    color: var(--btn-color);
 }
 
 button:hover {
@@ -129,6 +141,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     font-size: .85rem;
+    padding: 1rem auto;
 }
 
 footer div {
@@ -158,4 +171,47 @@ footer ul li a {
 }
 footer ul li a:hover {
     text-decoration: underline;
+}
+
+
+/******MEDIA QUERIES********/
+@media (max-width: 825px) {
+    body {
+        grid-template-rows: 1fr 24fr 3fr;
+    }
+    footer {
+        flex-wrap: wrap;
+    }
+
+    footer div {
+        order: 1;
+        width: 100%;
+        justify-content: center;
+    }
+    footer ul:nth-of-type(1) {
+        order: 2;
+        margin-right: auto;
+    }
+
+    footer ul:nth-of-type(2) {
+        order: 3;
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .input {
+        width: 75%;
+    }
+    footer {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    footer div {
+        margin-bottom: .1rem;
+    }
+    footer ul {
+        margin: .2rem auto;
+    }
 }

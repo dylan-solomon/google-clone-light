@@ -18,7 +18,7 @@
 
 body {
     display: grid;
-    grid-template-rows: 1fr 9fr 2fr;
+    grid-template-rows: 1fr 15fr 1fr;
     height: 100vh;
     font-family: var(--font-primary);
     font-weight: 400;
@@ -117,4 +117,45 @@ button:hover {
     border: 1px solid var(--border-color);
     box-shadow: 0px 0px 2px var(--border-color);
     cursor: pointer;
+}
+
+
+/******Footer*******/
+
+footer {
+    background-color: var(--background-color-secondary);
+    color: var(--text-color-secondary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .85rem;
+}
+
+footer div {
+    display: flex;
+    align-items: center;
+}
+
+footer div img:nth-of-type(1) {
+    filter: var(--icon-color);
+    height: 20px;
+    width: 20px;
+}
+
+footer ul {
+    display: flex;
+    list-style: none;
+    margin-inline: 1.2rem;
+}
+
+footer ul li {
+    margin-inline: 1rem;
+}
+
+footer ul li a {
+    color: var(--text-color-secondary);
+    text-decoration: none;
+}
+footer ul li a:hover {
+    text-decoration: underline;
 }
